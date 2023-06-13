@@ -20,10 +20,10 @@ private EmployerRepository employerRepository;
 
 
 
-        @RequestMapping("")
-        public String index(Model model){
+    @GetMapping("")
+    public String index(Model model){
+            model.addAttribute("title","All Employers");
             model.addAttribute("employers", employerRepository.findAll());
-
             return "employers/index";
         }
 
